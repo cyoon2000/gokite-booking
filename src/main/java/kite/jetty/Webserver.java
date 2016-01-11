@@ -1,34 +1,35 @@
 package kite.jetty;
 
-import org.eclipse.jetty.server.Request;
 import org.eclipse.jetty.server.Server;
-import org.eclipse.jetty.server.handler.AbstractHandler;
+import org.eclipse.jetty.servlet.ServletContextHandler;
+import org.eclipse.jetty.servlet.ServletHolder;
+import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.servlet.DispatcherServlet;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import java.net.URL;
 
-public class Webserver extends AbstractHandler
+
+public class Webserver
 {
-    public void handle(String target,
-                       Request baseRequest,
-                       HttpServletRequest request,
-                       HttpServletResponse response)
-            throws IOException, ServletException
-    {
-        response.setContentType("text/html;charset=utf-8");
-        response.setStatus(HttpServletResponse.SC_OK);
-        baseRequest.setHandled(true);
-        response.getWriter().println("<h1>Hello World</h1>");
-    }
-
     public static void main(String[] args) throws Exception
     {
-        Server server = new Server(8080);
-        server.setHandler(new Webserver());
+        final Server server = new Server(9119);
+        server.setHandler(getServletHandler());
 
         server.start();
         server.join();
     }
+
+    static ServletContextHandler getServletHandler() {
+        AnnotationConfigWebApplicationContext applicationContext = new AnnotationConfigWebApplicationContext();
+        applicationContext.register(SpringConfig.class);
+
+        ServletHolder servletHolder = new ServletHolder(new DispatcherServlet(applicationContext));
+        ServletContextHandler context = new ServletContextHandler();
+        context.setContextPath("/");
+        context.addServlet(servletHolder, "/*");
+
+        return context;
+    }
+
 }
