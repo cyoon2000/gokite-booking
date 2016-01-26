@@ -31,7 +31,7 @@ CREATE TABLE photo (
   id bigint not null auto_increment,
   creationDate date not null,
   modifiedDate date not null,
-  propertyId bigint not null REFERENCES property(id),
+  property bigint not null REFERENCES property(id),
   thumbUrl VARCHAR(255) not null,
   photoUrl VARCHAR(255) not null,
   primary key (id)
@@ -42,7 +42,7 @@ CREATE TABLE propertyAmenity (
   creationDate date not null,
   modifiedDate date not null,
   property bigint not null REFERENCES property(id),
-  name varchar(50) not null,
+  amenity varchar(50) not null,
   primary key (id)
 );
 

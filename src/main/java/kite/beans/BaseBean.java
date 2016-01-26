@@ -1,5 +1,7 @@
 package kite.beans;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -10,9 +12,11 @@ public class BaseBean {
     Long id;
 
     @Temporal(TemporalType.TIMESTAMP)
+    @JsonIgnore
     private Date creationDate;
 
     @Temporal(TemporalType.TIMESTAMP)
+    @JsonIgnore
     private Date modifiedDate;
 
 

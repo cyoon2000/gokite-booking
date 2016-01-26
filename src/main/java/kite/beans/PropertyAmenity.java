@@ -1,6 +1,8 @@
 package kite.beans;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -8,11 +10,12 @@ import javax.persistence.*;
 public class PropertyAmenity extends BaseBean {
     @ManyToOne(cascade={CascadeType.ALL})
     @JoinColumn(name="property")
+    @JsonIgnore
     Property property;
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    AmenityEnum amenityEnum;
+    AmenityEnum amenity;
 
     public Property getProperty() {
         return property;
@@ -22,11 +25,11 @@ public class PropertyAmenity extends BaseBean {
         this.property = property;
     }
 
-    public AmenityEnum getAmenityEnum() {
-        return amenityEnum;
+    public AmenityEnum getAmenity() {
+        return amenity;
     }
 
-    public void setAmenityEnum(AmenityEnum amenityEnum) {
-        this.amenityEnum = amenityEnum;
+    public void setAmenity(AmenityEnum amenity) {
+        this.amenity = amenity;
     }
 }

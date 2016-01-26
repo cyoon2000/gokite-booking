@@ -5,28 +5,28 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name="property")
+@Table(name = "property")
 public class Property extends BaseBean {
     @Column(length = 255, nullable = false)
-    String title;
+    private String title;
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    PropertyType propertyType;
+    private PropertyType propertyType;
 
     @ManyToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "parentProperty")
-    Property parentProperty;
+    private Property parentProperty;
 
     @Embedded
-    Location location;
+    private Location location;
 
     @OneToOne
     @JoinColumn(name = "profilePhoto")
-    Photo profilePhoto;
+    private Photo profilePhoto;
 
-    @OneToMany(mappedBy = "property", fetch=FetchType.EAGER)
-    List<Photo> photos;
+    @OneToMany(mappedBy = "property", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Photo> photos;
 
     @Column
     private Integer numBedroom;
@@ -40,8 +40,8 @@ public class Property extends BaseBean {
     @Column
     private Integer extraPersonCharge;
 
-//    @OneToMany(mappedBy = "property", cascade = CascadeType.ALL)
-//    private List<PropertyAmenity> propertyAmenityList;
+    @OneToMany(mappedBy = "property", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<PropertyAmenity> propertyAmenityList;
 
     public String getTitle() {
         return title;
@@ -123,11 +123,11 @@ public class Property extends BaseBean {
         this.extraPersonCharge = extraPersonCharge;
     }
 
-//    public List<PropertyAmenity> getPropertyAmenityList() {
-//        return propertyAmenityList;
-//    }
-//
-//    public void setPropertyAmenityList(List<PropertyAmenity> propertyAmenityList) {
-//        this.propertyAmenityList = propertyAmenityList;
-//    }
+    public List<PropertyAmenity> getPropertyAmenityList() {
+        return propertyAmenityList;
+    }
+
+    public void setPropertyAmenityList(List<PropertyAmenity> propertyAmenityList) {
+        this.propertyAmenityList = propertyAmenityList;
+    }
 }
