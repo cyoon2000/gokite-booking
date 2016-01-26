@@ -1,24 +1,19 @@
 package kite.beans;
 
-import org.hibernate.annotations.Index;
-
 import javax.persistence.*;
 import java.util.Date;
 
-/**
- * Created by adrianyacub on 1/10/16.
- */
 @MappedSuperclass
 public class BaseBean {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
     @Temporal(TemporalType.TIMESTAMP)
-    private Date creationDate = new Date();
+    private Date creationDate;
 
     @Temporal(TemporalType.TIMESTAMP)
-    private Date modifiedDate = new Date();
+    private Date modifiedDate;
 
 
     public Long getId() {
@@ -45,17 +40,8 @@ public class BaseBean {
         this.modifiedDate = modifiedDate;
     }
 
-    @PreUpdate
-    public void onUpdate() {
-        if (creationDate == null) {
-            setCreationDate(new Date());
-        }
-        setModifiedDate(new Date());
-    }
-
     @Override
-    public String toString()
-    {
+    public String toString() {
         return getClass().getSimpleName() + "(" + getId() + ")";
     }
 

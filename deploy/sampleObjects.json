@@ -1,0 +1,10 @@
+{
+ "house": {
+   "title" : "house1",
+   "propertyType" : "HOUSE"
+ },
+  "house2": {
+    "title" : "house2",
+    "propertyType" : "HOUSE"
+  }
+}

@@ -1,6 +1,5 @@
 package kite.controllers;
 
-import kite.beans.Property;
 import kite.beans.User;
 import kite.services.UserDAO;
 import org.springframework.beans.factory.annotation.Autowired;

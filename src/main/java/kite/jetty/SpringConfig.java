@@ -31,9 +31,12 @@ public class SpringConfig  {
     public DataSource getDataSource() {
         BasicDataSource dataSource = new BasicDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://kitedb.ctkxca5cat9y.us-east-1.rds.amazonaws.com:3306/booking");
-        dataSource.setUsername("kite");
-        dataSource.setPassword("kiteetik");
+//        dataSource.setUrl("jdbc:mysql://kitedb.ctkxca5cat9y.us-east-1.rds.amazonaws.com:3306/booking");
+//        dataSource.setUsername("kite");
+//        dataSource.setPassword("kiteetik");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/booking");
+        dataSource.setUsername("root");
+        dataSource.setPassword("root");
         return dataSource;
     }
 
