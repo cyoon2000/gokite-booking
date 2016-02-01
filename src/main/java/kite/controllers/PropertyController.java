@@ -2,6 +2,7 @@ package kite.controllers;
 
 
 import kite.beans.Property;
+import kite.dtos.SearchDTO;
 import kite.services.PropertyDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -48,8 +49,8 @@ public class PropertyController {
 
     @RequestMapping(value = "search", method = RequestMethod.GET)
     public @ResponseBody
-    List<Property> search() {
-        return propertyDAO.getAll();
+    List<Property> search(@RequestBody SearchDTO dto) {
+        return propertyDAO.search(dto);
     }
 
 }

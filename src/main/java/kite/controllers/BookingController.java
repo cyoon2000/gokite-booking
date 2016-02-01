@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Date;
+
 @Controller
 @RequestMapping(value = "/booking", produces = "application/json", consumes = "application/json")
 @SuppressWarnings("unused")
@@ -28,6 +30,8 @@ public class BookingController {
     public @ResponseBody
     long createBooking(@RequestBody BookingDTO dto) {
         Booking booking = new Booking();
+        booking.setCreationDate(new Date());
+        booking.setModifiedDate(new Date());
         booking.setProperty(propertyDAO.getById(dto.getPropertyId()));
         booking.setUser(userDAO.getById(dto.getUserId()));
         booking.setStartDateTimeInclusive(dto.getStartDateTimeInclusive());

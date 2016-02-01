@@ -3,31 +3,67 @@ package kite.dtos;
 import java.util.Date;
 
 public class SearchDTO {
-    private Date startDateTimeInclusive;
-    private Date endDateTimeInclusive;
-    private int minCapacity;
+    private Integer startDateYear;
+    private Integer startDateMonth;
+    private Integer startDateDay;
+    private Integer endDateYear;
+    private Integer endDateMonth;
+    private Integer endDateDay;
+    private Integer minCapacity;
 
-    public Date getStartDateTimeInclusive() {
-        return startDateTimeInclusive;
+    public Integer getStartDateYear() {
+        return startDateYear;
     }
 
-    public void setStartDateTimeInclusive(Date startDateTimeInclusive) {
-        this.startDateTimeInclusive = startDateTimeInclusive;
+    public void setStartDateYear(Integer startDateYear) {
+        this.startDateYear = startDateYear;
     }
 
-    public Date getEndDateTimeInclusive() {
-        return endDateTimeInclusive;
+    public Integer getStartDateMonth() {
+        return startDateMonth;
     }
 
-    public void setEndDateTimeInclusive(Date endDateTimeInclusive) {
-        this.endDateTimeInclusive = endDateTimeInclusive;
+    public void setStartDateMonth(Integer startDateMonth) {
+        this.startDateMonth = startDateMonth;
     }
 
-    public int getMinCapacity() {
+    public Integer getStartDateDay() {
+        return startDateDay;
+    }
+
+    public void setStartDateDay(Integer startDateDay) {
+        this.startDateDay = startDateDay;
+    }
+
+    public Integer getEndDateYear() {
+        return endDateYear;
+    }
+
+    public void setEndDateYear(Integer endDateYear) {
+        this.endDateYear = endDateYear;
+    }
+
+    public Integer getEndDateMonth() {
+        return endDateMonth;
+    }
+
+    public void setEndDateMonth(Integer endDateMonth) {
+        this.endDateMonth = endDateMonth;
+    }
+
+    public Integer getEndDateDay() {
+        return endDateDay;
+    }
+
+    public void setEndDateDay(Integer endDateDay) {
+        this.endDateDay = endDateDay;
+    }
+
+    public Integer getMinCapacity() {
         return minCapacity;
     }
 
-    public void setMinCapacity(int minCapacity) {
+    public void setMinCapacity(Integer minCapacity) {
         this.minCapacity = minCapacity;
     }
 }

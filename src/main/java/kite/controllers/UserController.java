@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -31,6 +32,8 @@ public class UserController {
     @RequestMapping(value = "", method = RequestMethod.POST)
     public @ResponseBody
     long createUser(@RequestBody User user) {
+        user.setCreationDate(new Date());
+        user.setModifiedDate(new Date());
         return userDAO.create(user);
     }
 }
