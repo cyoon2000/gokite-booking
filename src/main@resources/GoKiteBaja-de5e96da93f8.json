@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "gokitebaja-1234",
+  "private_key_id": "de5e96da93f884b45903b8bd4eacfee1bb155299",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCtocwbULAIv0Qx\nhmOK5fkuvhL0Fo7e5l527+QoP0FRXoSpu8AW50xqOm7YhDZup8wDRgwjYnvQ4eja\n7nPnHfwAknvcp+kTB59H99cx+XiXCAdOZH8/aKPrg+sFZHGbjOv4JpX2pALko9Lm\nUMO6SDRKVSIK9ANrRcL7hbxhHwy8ntfhGBI41N5LnvxMOu5zWXI/1W4s5pvfAN8L\n7Kr138R2XfmBiKdID2jkM6wF36y2fkm8BrI7bgoTIeoDB+TFY1dzuPN4FNm9HLBd\nm3iKFY69IY/Pqg8eCEV2bN+A4q2cJV12Nt/NG7g1PtIAz4CEcsPnuNEbNxX3mVfv\nIkofb3RFAgMBAAECggEAOz4eXx+LwKBKCz/YTPckq18tJl1gCAvAJYK6bUUP60x9\npVArPWVT/FbNpVCPJfhYsrE+yP/8UQwToEeGAlCHwEY6vtIHw3dxUGPu590/2QBj\nRcsiY6c3bs9G7EMWREWz6ap4tnvFhO+ksPLTpYanWMltYSFa3UojOiCqYtTuSpiz\nSO5XHQcWEo9yx5nMpmUqbJRdo5FEIeIL6uvTcvQQ1kIJoBVKf0L6U5T90LFg1Tfw\nMLN1HvnS3OLu/e4r1tuVfsrppAqtmYXJRlWN7tKNsm3/zWKq6Rn/bmJUghGNguGo\ncd5qu52mARTSUhoIYyJQMzQeRyccUOBVKeIdU4WfDQKBgQDqzGbgqFZZCA5gac8x\nLwknKyQcAha1XFcFtf/mlJeiJKu0/nYl+nZFJ0hXif3jc989P6TXNv5XFbSrreSG\nr2K6J4tpexgTHaRja9IP1QToBsZtTAPFkiZv+9VDtcuXpfr4XAxt06FGCoPdnbw9\nGVkfRXVrHqfO5HLaV1wVfgCLUwKBgQC9T3kbXI+/2Zdwle1A3Xw8FhGifZ7HQRiJ\nDyFYiaHBXpa8PTP5T7vPdYjA/CkGMZyGghZvUPhfjntKzTJeIaQD0IpzOqgnEwPn\n6+d4QAKNWqU/8achjzb4Z2VT9fm/gksZfYGMzElkur42fdZ6RxYrngMh5jJA0Agj\n4UJOEsYnBwKBgA9l/FE7eP45wwebqNTm6sjA0Ytsr6SRO7vKJdAvaopdsU0baxAu\njtcWLm5fRGFIVhmkNOFQX/nCGKkxrE0Q736Z3VC7m+aVCRTkG1CifcHhv92nIJAy\nd4bcky3vnDyDzCPBlacWO/tl8SP1lkTDhs7ANWUjC4pL/SRImmdmbg61AoGBAIwB\n+8ptoW686VB9wXLom1oA5FftWgF5NkEfbIUDfRr67rYW+ZpYCsl63oIDu/91r5KX\nISqAksBxKuP+cFLHxHqBv/NKnVQQryHWCWGYzYpnULHC8d1TAs+iAIGg+G1XWl1m\nweo0p88UgVrhpD7Y1h+6BA0NJ3thn7ORhC0jm2L/AoGAS0FfkDPfpvdhv08v7Ohm\n3vBFTNs1R4HsVCdIUcbaEi3iHcp19S37IeJvHDsAp7JPuWaPo4Q79v3ue2yHhC2w\nA7QfOYf77TigmEiV/M/NpOGywlrkquM1XrJ1VPSCxsGZ1JCmYGDgfKtw0aIpON3K\niTu8tmYvVCtI6ga+/9glaRY=\n-----END PRIVATE KEY-----\n",
+  "client_email": "booking@gokitebaja-1234.iam.gserviceaccount.com",
+  "client_id": "116857869736053125332",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/booking%40gokitebaja-1234.iam.gserviceaccount.com"
+}

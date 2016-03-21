@@ -1,15 +1,14 @@
 package kite.beans;
 
+
+import kite.enums.OccupancyTimePeriod;
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name="booking")
-public class Booking extends BaseBean {
-    @ManyToOne(cascade={CascadeType.ALL})
-    @JoinColumn(name="user")
-    User user;
-
+@Table(name="occupancy")
+public class Occupancy extends BaseBean {
     @ManyToOne(cascade={CascadeType.ALL})
     @JoinColumn(name="property")
     Property property;
@@ -20,13 +19,10 @@ public class Booking extends BaseBean {
     @Temporal(TemporalType.TIMESTAMP)
     private Date endDateTimeExclusive;
 
-    public User getUser() {
-        return user;
-    }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private OccupancyTimePeriod timePeriod;
 
     public Property getProperty() {
         return property;
@@ -50,5 +46,13 @@ public class Booking extends BaseBean {
 
     public void setEndDateTimeExclusive(Date endDateTimeExclusive) {
         this.endDateTimeExclusive = endDateTimeExclusive;
+    }
+
+    public OccupancyTimePeriod getTimePeriod() {
+        return timePeriod;
+    }
+
+    public void setTimePeriod(OccupancyTimePeriod timePeriod) {
+        this.timePeriod = timePeriod;
     }
 }

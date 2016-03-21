@@ -1,4 +1,4 @@
-package kite.services;
+package kite.dao;
 
 import kite.beans.Booking;
 import org.springframework.stereotype.Repository;

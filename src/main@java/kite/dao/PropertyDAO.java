@@ -1,13 +1,11 @@
-package kite.services;
+package kite.dao;
 
-import kite.beans.Photo;
 import kite.beans.Property;
 import kite.dtos.SearchDTO;
 import org.hibernate.Criteria;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
-import java.util.Date;
 import java.util.List;
 
 @Repository

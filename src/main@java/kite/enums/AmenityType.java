@@ -1,6 +1,6 @@
-package kite.beans;
+package kite.enums;
 
-public enum AmenityEnum {
+public enum AmenityType {
     BEACH_FRONT,
     FREE_BREAKFAST,
     WIFI,

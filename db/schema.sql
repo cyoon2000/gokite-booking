@@ -16,6 +16,7 @@ CREATE TABLE property (
   capacity int,
   minimumStay int,
   extraPersonCharge int,
+  googleCalendarId VARCHAR(255),
   primary key (id)
 );
 
@@ -46,11 +47,24 @@ CREATE TABLE propertyAmenity (
   primary key (id)
 );
 
-CREATE TABLE occupiedDay (
+CREATE TABLE booking (
   id bigint not null auto_increment,
   creationDate date not null,
   modifiedDate date not null,
-  propertyId bigint not null REFERENCES property(id),
-  dateOccupied date not null,
+  user bigint not null REFERENCES user(id),
+  property bigint not null REFERENCES property(id),
+  startDateTimeInclusive date not null,
+  endDateTimeExclusive date not null,
+  primary key (id)
+);
+
+CREATE TABLE occupancy (
+  id bigint not null auto_increment,
+  creationDate date not null,
+  modifiedDate date not null,
+  property bigint not null REFERENCES property(id),
+  startDateTimeInclusive date not null,
+  endDateTimeExclusive date not null,
+  timePeriod varchar(63) not null,
   primary key (id)
 );

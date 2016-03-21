@@ -1,4 +1,4 @@
-package kite.services;
+package kite.dao;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
