@@ -1,12 +1,12 @@
 package kite.controllers;
 
 
-import kite.beans.*;
+import kite.beans.Property;
 import kite.dtos.SearchDTO;
 import kite.models.IconModel;
 import kite.models.PropertyBaseModel;
 import kite.models.PropertyDetailModel;
-import kite.services.PropertyDAO;
+import kite.dao.PropertyDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;

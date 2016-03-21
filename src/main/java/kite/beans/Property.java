@@ -40,6 +40,9 @@ public class Property extends BaseBean {
     @Column
     private Integer extraPersonCharge;
 
+    @Column
+    private String googleCalendarId;
+
     @OneToMany(mappedBy = "property", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<PropertyAmenity> propertyAmenityList;
 
@@ -129,5 +132,13 @@ public class Property extends BaseBean {
 
     public void setPropertyAmenityList(List<PropertyAmenity> propertyAmenityList) {
         this.propertyAmenityList = propertyAmenityList;
+    }
+
+    public String getGoogleCalendarId() {
+        return googleCalendarId;
+    }
+
+    public void setGoogleCalendarId(String googleCalendarId) {
+        this.googleCalendarId = googleCalendarId;
     }
 }

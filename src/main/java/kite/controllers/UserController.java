@@ -1,7 +1,7 @@
 package kite.controllers;
 
 import kite.beans.User;
-import kite.services.UserDAO;
+import kite.dao.UserDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;

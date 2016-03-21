@@ -6,7 +6,7 @@ public class BookingDTO {
     private long userId;
     private long propertyId;
     private Date startDateTimeInclusive;
-    private Date endDateTimeInclusive;
+    private Date endDateTimeExclusive;
 
     public long getUserId() {
         return userId;
@@ -32,11 +32,11 @@ public class BookingDTO {
         this.startDateTimeInclusive = startDateTimeInclusive;
     }
 
-    public Date getEndDateTimeInclusive() {
-        return endDateTimeInclusive;
+    public Date getEndDateTimeExclusive() {
+        return endDateTimeExclusive;
     }
 
-    public void setEndDateTimeInclusive(Date endDateTimeInclusive) {
-        this.endDateTimeInclusive = endDateTimeInclusive;
+    public void setEndDateTimeExclusive(Date endDateTimeExclusive) {
+        this.endDateTimeExclusive = endDateTimeExclusive;
     }
 }

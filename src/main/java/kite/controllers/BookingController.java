@@ -2,9 +2,9 @@ package kite.controllers;
 
 import kite.beans.Booking;
 import kite.dtos.BookingDTO;
-import kite.services.BookingDAO;
-import kite.services.PropertyDAO;
-import kite.services.UserDAO;
+import kite.dao.BookingDAO;
+import kite.dao.PropertyDAO;
+import kite.dao.UserDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -35,7 +35,7 @@ public class BookingController {
         booking.setProperty(propertyDAO.getById(dto.getPropertyId()));
         booking.setUser(userDAO.getById(dto.getUserId()));
         booking.setStartDateTimeInclusive(dto.getStartDateTimeInclusive());
-        booking.setEndDateTimeInclusive(dto.getEndDateTimeInclusive());
+        booking.setEndDateTimeExclusive(dto.getEndDateTimeExclusive());
         return bookingDAO.create(booking);
     }
 
