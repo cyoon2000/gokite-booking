@@ -1,7 +1,7 @@
 package kite.controllers;
 
-import kite.beans.AmenityEnum;
 import kite.beans.PropertyType;
+import kite.enums.AmenityType;
 import kite.models.*;
 
 import java.util.ArrayList;
@@ -250,12 +250,12 @@ public class PropertyUtil {
 		model.setMinimumStay(7);
 		model.setExtraPersonCharge(20);
 
-		List<AmenityEnum> amenities = new ArrayList();
-		amenities.add(AmenityEnum.BEACH_FRONT);
-		amenities.add(AmenityEnum.FREE_BREAKFAST);
-		amenities.add(AmenityEnum.WIFI);
-		amenities.add(AmenityEnum.KITCHEN);
-		amenities.add(AmenityEnum.AC);
+		List<AmenityType> amenities = new ArrayList();
+		amenities.add(AmenityType.BEACH_FRONT);
+		amenities.add(AmenityType.FREE_BREAKFAST);
+		amenities.add(AmenityType.WIFI);
+		amenities.add(AmenityType.KITCHEN);
+		amenities.add(AmenityType.AC);
 		model.setPropertyAmenityList(amenities);
 
 		// Booking

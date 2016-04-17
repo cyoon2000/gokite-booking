@@ -13,11 +13,11 @@ public class Occupancy extends BaseBean {
     @JoinColumn(name="property")
     Property property;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date startDateTimeInclusive;
+    @Column(nullable = false)
+    private int startDateTimeInclusive;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date endDateTimeExclusive;
+    @Column(nullable = false)
+    private int endDateTimeExclusive;
 
 
     @Column(nullable = false)
@@ -32,19 +32,19 @@ public class Occupancy extends BaseBean {
         this.property = property;
     }
 
-    public Date getStartDateTimeInclusive() {
+    public int getStartDateTimeInclusive() {
         return startDateTimeInclusive;
     }
 
-    public void setStartDateTimeInclusive(Date startDateTimeInclusive) {
+    public void setStartDateTimeInclusive(int startDateTimeInclusive) {
         this.startDateTimeInclusive = startDateTimeInclusive;
     }
 
-    public Date getEndDateTimeExclusive() {
+    public int getEndDateTimeExclusive() {
         return endDateTimeExclusive;
     }
 
-    public void setEndDateTimeExclusive(Date endDateTimeExclusive) {
+    public void setEndDateTimeExclusive(int endDateTimeExclusive) {
         this.endDateTimeExclusive = endDateTimeExclusive;
     }
 

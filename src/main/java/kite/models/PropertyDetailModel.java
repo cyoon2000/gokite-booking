@@ -1,6 +1,6 @@
 package kite.models;
 
-import kite.beans.AmenityEnum;
+import kite.enums.AmenityType;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ public class PropertyDetailModel extends PropertyBaseModel {
 	private Integer weeklyRate;
 	private Integer minimumStay;
 	private Integer extraPersonCharge;
-	private List<AmenityEnum> propertyAmenityList;
+	private List<AmenityType> propertyAmenityList;
 
 	// Booking
 	private BookingModel bookingModel;
@@ -41,11 +41,11 @@ public class PropertyDetailModel extends PropertyBaseModel {
 		this.weeklyRate = weeklyRate;
 	}
 
-	public List<AmenityEnum> getPropertyAmenityList() {
+	public List<AmenityType> getPropertyAmenityList() {
 		return propertyAmenityList;
 	}
 
-	public void setPropertyAmenityList(List<AmenityEnum> propertyAmenityList) {
+	public void setPropertyAmenityList(List<AmenityType> propertyAmenityList) {
 		this.propertyAmenityList = propertyAmenityList;
 	}
 

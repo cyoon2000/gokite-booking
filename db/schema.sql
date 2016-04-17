@@ -63,8 +63,8 @@ CREATE TABLE occupancy (
   creationDate date not null,
   modifiedDate date not null,
   property bigint not null REFERENCES property(id),
-  startDateTimeInclusive date not null,
-  endDateTimeExclusive date not null,
+  startDateTimeInclusive int not null,
+  endDateTimeExclusive int not null,
   timePeriod varchar(63) not null,
   primary key (id)
 );

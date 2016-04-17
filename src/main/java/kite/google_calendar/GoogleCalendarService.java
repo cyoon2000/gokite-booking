@@ -16,8 +16,8 @@ import com.google.api.services.calendar.model.Events;
 import kite.beans.Occupancy;
 import kite.beans.Property;
 import kite.dao.OccupancyDAO;
-import kite.dao.PropertyDAO;
 import kite.enums.OccupancyTimePeriod;
+import kite.utils.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,11 +36,8 @@ public class GoogleCalendarService {
     private final static String SECRETS_FILE = "GoKiteBaja-de5e96da93f8.json";
     private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
 
-
     @Autowired
     private OccupancyDAO occupancyDAO;
-    @Autowired
-    private PropertyDAO propertyDAO;
 
     public static void main(String[] args) throws IOException {
         GoogleCalendarService me = new GoogleCalendarService();
@@ -52,7 +49,9 @@ public class GoogleCalendarService {
             int i = 0;
             for (Event event : allEvents) {
                 DateTime[] startEndTimes = getStartAndEndTimeFromEvent(event);
-                System.out.printf("\t%d) %s (%s - %s)\n", ++i, event.getSummary(), startEndTimes[0], startEndTimes[1]);
+                System.out.printf("\t%d) %s (%s - %s)\n", ++i, event.getSummary(),
+                        DateUtils.toDateNumber(startEndTimes[0].getValue()),
+                        DateUtils.toDateNumber(startEndTimes[1].getValue()));
             }
         }
     }
@@ -81,8 +80,8 @@ public class GoogleCalendarService {
             occupancy.setCreationDate(new Date());
             occupancy.setModifiedDate(new Date());
             occupancy.setProperty(property);
-            occupancy.setStartDateTimeInclusive(new Date(startEndTimes[0].getValue()));
-            occupancy.setEndDateTimeExclusive(new Date(startEndTimes[1].getValue()));
+            occupancy.setStartDateTimeInclusive(DateUtils.toDateNumber(startEndTimes[0].getValue()));
+            occupancy.setEndDateTimeExclusive(DateUtils.toDateNumber(startEndTimes[1].getValue()));
             occupancy.setTimePeriod(OccupancyTimePeriod.DAY);
             occupancyDAO.create(occupancy);
         }
@@ -121,14 +120,10 @@ public class GoogleCalendarService {
 
 
 
-
-
     public List<Event> getAllEventsInCalendar(String calendarId, DateTime starting) throws IOException {
         Calendar service = getService();
 
         List<Event> ret = new ArrayList<>();
-
-        System.out.printf("EVENTS in %s:\n", calendarId);
 
         if (starting == null) {
             starting = new DateTime(new Date(0L));
